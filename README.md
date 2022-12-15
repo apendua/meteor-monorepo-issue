@@ -2,6 +2,27 @@
 
 Public repo to share with MeteorJS to identify a monorepo problem
 
+## RUSH + Meteor
+
+Meteor does not natively support `pnpm` yet so you will need to run `meteor` from a checkout in order for this setup to work.
+
+Start by cloning https://github.com/apendua/meteor.git and make sure yo use the `resolve-symlinks` branch:
+```
+git clone -b resolve-symlinks --single-branch https://github.com/apendua/meteor.git
+```
+Next, create `meteor.local.sh` inside `apps/myapp/` folder, with the following content:
+```
+#!/bin/bash
+export METEOR_MONOREPO_ROOT=/path/to/meteor-monorepo-issue
+~/path/to/meteor/checkout/meteor $@
+```
+and make it executable. Finally:
+
+- Make sure you have [rush](https://rushjs.io/) installed
+- Go to `/path/to/meteor-monorepo-issue` and run `rush install`
+- Run `rush build:watch` from the root to build and watch all projects
+- Open another terminal, go to `apps/myapp/` and run `npm start` start meteor. This will use the version of meteor which `meteor.local.sh` is pointing to.
+
 ## Setup
 
 - install [pnpm](https://pnpm.io/installation)
