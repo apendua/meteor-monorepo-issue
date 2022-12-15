@@ -1,59 +1,82 @@
 lockfileVersion: 5.4
 
-specifiers:
-  '@babel/runtime': ^7.18.0
-  '@lessonup/package-a': 0.0.1
-  '@snowplow/browser-tracker': ^3.4.0
-  '@types/meteor': ^1.4.81
-  '@types/mocha': ^8.2.3
-  react: 17.0.2
-  react-dom: 17.0.2
-  scheduler: ^0.22.0
-  typescript: 4.6.4
+importers:
 
-dependencies:
-  '@babel/runtime': 7.18.3
-  '@lessonup/package-a': link:../../packages/package-a
-  '@snowplow/browser-tracker': 3.4.0
-  react: 17.0.2
-  react-dom: 17.0.2_react@17.0.2
-  scheduler: 0.22.0
+  .:
+    specifiers: {}
 
-devDependencies:
-  '@types/meteor': 1.4.87
-  '@types/mocha': 8.2.3
-  typescript: 4.6.4
+  ../../apps/myapp:
+    specifiers:
+      '@babel/runtime': ^7.18.0
+      '@lessonup/package-a': workspace:*
+      '@snowplow/browser-tracker': ^3.4.0
+      '@types/meteor': ^1.4.81
+      '@types/mocha': ^8.2.3
+      '@types/react-dom': ^17.0.18
+      react: 17.0.2
+      react-dom: 17.0.2
+      typescript: 4.6.4
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@lessonup/package-a': link:../../packages/package-a
+      '@snowplow/browser-tracker': 3.7.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    devDependencies:
+      '@types/meteor': 1.4.87
+      '@types/mocha': 8.2.3
+      '@types/react-dom': 17.0.18
+      typescript: 4.6.4
+
+  ../../packages/package-a:
+    specifiers:
+      '@lessonup/package-b': workspace:*
+      '@types/react': 17.0.2
+      typescript: 4.6.4
+    dependencies:
+      '@lessonup/package-b': link:../package-b
+    devDependencies:
+      '@types/react': 17.0.2
+      typescript: 4.6.4
+
+  ../../packages/package-b:
+    specifiers:
+      '@types/react': 17.0.2
+      typescript: 4.6.4
+    devDependencies:
+      '@types/react': 17.0.2
+      typescript: 4.6.4
 
 packages:
 
-  /@babel/runtime/7.18.3:
-    resolution: {integrity: sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==}
+  /@babel/runtime/7.20.6:
+    resolution: {integrity: sha512-Q+8MqP7TiHMWzSfwiJwXCjyf4GYA4Dgw3emg/7xmwsdLJOZUp+nMqcOwOzzYheuM1rhDu8FSj2l0aoMygEuXuA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.11
     dev: false
 
-  /@snowplow/browser-tracker-core/3.4.0:
-    resolution: {integrity: sha512-Eav/+UnfnytnuGVJRh8wjIdAN2Qx/IZxAtDtNj0cu+WQactAnSJBeUuaWOrcasXbvrMchlF+GyvA/PiOXLeDTQ==}
+  /@snowplow/browser-tracker-core/3.7.0:
+    resolution: {integrity: sha512-mP1Uc9CjriW/BIMHxdzvNmalLKxuFnNhqwkeOgIHGmC11pJP7dKDumsTj4x8nBohr+5Ie14hLXNZhb51JoskVQ==}
     dependencies:
-      '@snowplow/tracker-core': 3.4.0
+      '@snowplow/tracker-core': 3.7.0
       sha1: 1.1.1
-      tslib: 2.4.0
+      tslib: 2.4.1
       uuid: 3.4.0
     dev: false
 
-  /@snowplow/browser-tracker/3.4.0:
-    resolution: {integrity: sha512-kOzTFAc4cwr/CJLA+lpwR0eDc0vmcIIjlX6veoRXiELb7tR1JFdCjaQirSmQ1mLjjxTjqrkBPb+2TNhxtCzw0g==}
+  /@snowplow/browser-tracker/3.7.0:
+    resolution: {integrity: sha512-vTD7G67iZ8nsQaATJ8Z62o7aKtR143VwJsL+CIWgsJaqd1nUFRKihuX8BnzVIyzPND0qAuQUxEi4jn2J7W6Elw==}
     dependencies:
-      '@snowplow/browser-tracker-core': 3.4.0
-      '@snowplow/tracker-core': 3.4.0
-      tslib: 2.4.0
+      '@snowplow/browser-tracker-core': 3.7.0
+      '@snowplow/tracker-core': 3.7.0
+      tslib: 2.4.1
     dev: false
 
-  /@snowplow/tracker-core/3.4.0:
-    resolution: {integrity: sha512-HINAMZdvcQwIOZVVM8UtNZB2X33m7+gAIzDj3YQxvzphDUo7+GPCmmoVZmP9C2m6HovtBbKDX7slruvWFh+kcw==}
+  /@snowplow/tracker-core/3.7.0:
+    resolution: {integrity: sha512-Amt4w0E7XvM8LbCRRHfcudc5hFBNOCF8UmWQvEYFqedPcD08jxqulMMsTghTpjmmpL7rlNRlG17flKis9Qxqbg==}
     dependencies:
-      tslib: 2.4.0
+      tslib: 2.4.1
       uuid: 3.4.0
     dev: false
 
@@ -61,13 +84,13 @@ packages:
     resolution: {integrity: sha512-ELCPqAdroMdcuxqwMgUpifQyRoTpyYCNr1V9xKyF40VsBobsj+BbWNRvwGchMgBPGqkw655ypkjj2MEF5ywVwg==}
     deprecated: This is a stub types definition. bson provides its own type definitions, so you do not need this installed.
     dependencies:
-      bson: 4.6.4
+      bson: 4.7.0
     dev: true
 
   /@types/connect/3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 17.0.35
+      '@types/node': 18.11.15
     dev: true
 
   /@types/jquery/3.5.14:
@@ -82,7 +105,7 @@ packages:
       '@types/connect': 3.4.35
       '@types/jquery': 3.5.14
       '@types/mongodb': 3.6.20
-      '@types/react': 18.0.9
+      '@types/react': 17.0.2
       '@types/underscore': 1.11.4
     dev: true
 
@@ -94,27 +117,28 @@ packages:
     resolution: {integrity: sha512-WcdpPJCakFzcWWD9juKoZbRtQxKIMYF/JIAM4JrNHrMcnJL6/a2NWjXxW7fo9hxboxxkg+icff8d7+WIEvKgYQ==}
     dependencies:
       '@types/bson': 4.2.0
-      '@types/node': 17.0.35
+      '@types/node': 18.11.15
     dev: true
 
-  /@types/node/17.0.35:
-    resolution: {integrity: sha512-vu1SrqBjbbZ3J6vwY17jBs8Sr/BKA+/a/WtjRG+whKg1iuLFOosq872EXS0eXWILdO36DHQQeku/ZcL6hz2fpg==}
+  /@types/node/18.11.15:
+    resolution: {integrity: sha512-VkhBbVo2+2oozlkdHXLrb3zjsRkpdnaU2bXmX8Wgle3PUi569eLRaHGlgETQHR7lLL1w7GiG3h9SnePhxNDecw==}
     dev: true
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react/18.0.9:
-    resolution: {integrity: sha512-9bjbg1hJHUm4De19L1cHiW0Jvx3geel6Qczhjd0qY5VKVE2X5+x77YxAepuCwVh4vrgZJdgEJw48zrhRIeF4Nw==}
+  /@types/react-dom/17.0.18:
+    resolution: {integrity: sha512-rLVtIfbwyur2iFKykP2w0pl/1unw26b5td16d5xMgp7/yjTHomkyxPYChFoCr/FtEX1lN9wY6lFj1qvKdS5kDw==}
     dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
-      csstype: 3.1.0
+      '@types/react': 17.0.2
     dev: true
 
-  /@types/scheduler/0.16.2:
-    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+  /@types/react/17.0.2:
+    resolution: {integrity: sha512-Xt40xQsrkdvjn1EyWe1Bc0dJLcil/9x2vAuW7ya+PuQip4UYUaXyhzWmAbwRsdMgwOFHpfp7/FFZebDU6Y8VHA==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      csstype: 3.1.1
     dev: true
 
   /@types/sizzle/2.3.3:
@@ -129,8 +153,8 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: true
 
-  /bson/4.6.4:
-    resolution: {integrity: sha512-TdQ3FzguAu5HKPPlr0kYQCyrYUYh8tFM+CMTpxjNzVzxeiJY00Rtuj3LXLHSgiGvmaWlZ8PE+4KyM2thqE38pQ==}
+  /bson/4.7.0:
+    resolution: {integrity: sha512-VrlEE4vuiO1WTpfof4VmaVolCVYkYTgB9iWgYNOrVlnifpME/06fhFRmONgBhClD5pFC1t9ZWqFUQEQAzY43bA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       buffer: 5.7.1
@@ -148,11 +172,11 @@ packages:
     dev: false
 
   /crypt/0.0.2:
-    resolution: {integrity: sha1-iNf/fsDfuG9xPch7u0LQRNPmxBs=}
+    resolution: {integrity: sha512-mCxBlsHFYh9C+HVpiEacem8FEBnMXgU9gy4zmNC+SXAZNB/1idgp/aulFJ4FgCi7GPEVbfyng092GqL2k2rmow==}
     dev: false
 
-  /csstype/3.1.0:
-    resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
+  /csstype/3.1.1:
+    resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
     dev: true
 
   /ieee754/1.2.1:
@@ -171,7 +195,7 @@ packages:
     dev: false
 
   /object-assign/4.1.1:
-    resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
     dev: false
 
@@ -194,8 +218,8 @@ packages:
       object-assign: 4.1.1
     dev: false
 
-  /regenerator-runtime/0.13.9:
-    resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
+  /regenerator-runtime/0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
     dev: false
 
   /scheduler/0.20.2:
@@ -205,21 +229,15 @@ packages:
       object-assign: 4.1.1
     dev: false
 
-  /scheduler/0.22.0:
-    resolution: {integrity: sha512-6QAm1BgQI88NPYymgGQLCZgvep4FyePDWFpXVK+zNSUgHwlqpJy8VEh8Et0KxTACS4VWwMousBElAZOH9nkkoQ==}
-    dependencies:
-      loose-envify: 1.4.0
-    dev: false
-
   /sha1/1.1.1:
-    resolution: {integrity: sha1-rdqnqTFo85PxnrKxUJFhjicA+Eg=}
+    resolution: {integrity: sha512-dZBS6OrMjtgVkopB1Gmo4RQCDKiZsqcpAQpkV/aaj+FCrCg8r4I4qMkDPQjBgLIxlmu9k4nUbWq6ohXahOneYA==}
     dependencies:
       charenc: 0.0.2
       crypt: 0.0.2
     dev: false
 
-  /tslib/2.4.0:
-    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
+  /tslib/2.4.1:
+    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
     dev: false
 
   /typescript/4.6.4:

@@ -6,6 +6,5 @@
     "composite": false,
     "noEmit": true
   },
-  "references": [{ "path": "../../packages/package-a" }],
   "include": ["imports", "server", "client"]
 }

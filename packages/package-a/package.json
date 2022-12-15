@@ -11,7 +11,7 @@
     "react": "17.x"
   },
   "dependencies": {
-    "@lessonup/package-b": "0.0.1"
+    "@lessonup/package-b": "workspace:*"
   },
   "devDependencies": {
     "typescript": "4.6.4",
