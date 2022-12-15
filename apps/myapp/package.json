@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "METEOR_DISABLE_OPTIMISTIC_CACHING=true meteor",
-    "build": "tsc --build tsconfig.json --watch",
+    "start": "./meteor.sh",
+    "build": "./meteor.sh build --directory dist",
+    "build:watch": "",
     "clean": "rm -rf dist node_modules tsconfig.tsbuildinfo"
   },
   "dependencies": {

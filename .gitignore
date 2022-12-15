@@ -76,3 +76,4 @@ common/autoinstallers/*/.npmrc
 dist/
 tsconfig.tsbuildinfo
 .pnpm-debug.log
+meteor.local.sh
